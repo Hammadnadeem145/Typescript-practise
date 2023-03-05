@@ -392,25 +392,59 @@
 // var isItAnimal = r2 instanceof Animal;
 // console.log("Is Donkey a Animal: " + isItAnimal);
 // step12b_class_structural_typing
-class Human {
-    constructor(name) {
-        this.name = name;
-    }
-}
+// class Human {
+//   name: string;
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+// }
+// class Animal {
+//   name: string;
+//   age: number;
+//   constructor(name: string, age: number) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   eat() {
+//     console.log(this.name + " is a Human and its age is " + this.age);
+//   }
+// }
+// let h1 = new Human("");
+// let a1 = new Animal("World", 1220);
+// console.log(h1);
+// console.log(a1);
+// a1.eat()
+// h1 = new Animal("test", 24);
+// console.log(h1);
+// a1 = new Human("Hammad", 21); //Error
+// step12c_typing_confusion
+// class Human {
+//   name: string;
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+// }
 class Animal {
     constructor(name, age) {
         this.name = name;
         this.age = age;
     }
-    eat() {
-        console.log(this.name + " is a Human and its age is " + this.age);
+    eat(quantity) {
+        console.log(this.name + " is a Human and his aage is " + this.age);
     }
 }
-let h1 = new Human("");
-let a1 = new Animal("World", 1220);
-// console.log(h1);
-// console.log(a1);
-// a1.eat()
-h1 = new Animal("test", 24);
-console.log(h1);
+// let d = {name: "Hello", age: 4};
+// // console.log(d)
+// let h: Human = {name: "Hello"};
+// // console.log(h);
+// let h1: Human = d;
+// let isHuman: boolean = h instanceof Human;
+// console.log(isHuman);
+let a1 = { name: "Cat", age: 3, eat: function () {
+        console.log("Eat in object literal");
+    } };
+a1.eat(3);
+console.log(a1);
+let isAnimal = a1 instanceof Animal;
+console.log(isAnimal);
 export {};

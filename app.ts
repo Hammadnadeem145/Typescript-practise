@@ -569,3 +569,45 @@ import chalk from "chalk";
 // console.log(h1);
 
 // a1 = new Human("Hammad", 21); //Error
+
+// step12c_typing_confusion
+
+// class Human {
+//   name: string;
+
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+// }
+
+class Animal {
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number){
+        this.name = name;
+        this.age = age;
+    }
+    eat(quantity: number){
+        console.log(this.name + " is a Human and his aage is " + this.age)
+    }
+}
+
+// let d = {name: "Hello", age: 4};
+// // console.log(d)
+
+// let h: Human = {name: "Hello"};
+// // console.log(h);
+
+// let h1: Human = d;
+
+// let isHuman: boolean = h instanceof Human;
+// console.log(isHuman);
+// let a1: Animal = {name: "Cat", age: 3, eat: function() {
+//     console.log("Eat in object literal");
+// }};
+
+// a1.eat(3);
+// console.log(a1);
+// let isAnimal: boolean = a1 instanceof Animal;
+// console.log(isAnimal);
