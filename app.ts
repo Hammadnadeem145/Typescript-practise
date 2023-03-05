@@ -580,18 +580,18 @@ import chalk from "chalk";
 //   }
 // }
 
-class Animal {
-    name: string;
-    age: number;
+// class Animal {
+//     name: string;
+//     age: number;
 
-    constructor(name: string, age: number){
-        this.name = name;
-        this.age = age;
-    }
-    eat(quantity: number){
-        console.log(this.name + " is a Human and his aage is " + this.age)
-    }
-}
+//     constructor(name: string, age: number){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     eat(quantity: number){
+//         console.log(this.name + " is a Human and his aage is " + this.age)
+//     }
+// }
 
 // let d = {name: "Hello", age: 4};
 // // console.log(d)
