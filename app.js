@@ -450,74 +450,159 @@
 // let isAnimal: boolean = a1 instanceof Animal;
 // console.log(isAnimal);
 // step13a_inheritance
-class Animal {
+// class Animal {
+//   name: string;
+//   constructor(theName: string) {
+//     this.name = theName;
+//   }
+//   move(meters: number = 45) {
+//     console.log(this.name + " moved " + meters + "m.");
+//   }
+// }
+// // const d = new Animal("Hammad");
+// // d.move();
+// // // console.log(d);
+// class Snake extends Animal {
+//   constructor(name: string) {
+//     super(name);
+//   }
+//   move(meters = 5) {
+//     console.log("Slithering...");
+//     super.move(meters);
+//   }
+//   bite() {
+//     console.log("bites");
+//   }
+// }
+// // let s = new Snake("Anaconda");
+// // console.log(s);
+// // s.move();
+// // s.bite();
+// class Horse extends Animal {
+//   constructor(name: string) {
+//     super(name);
+//   }
+//   move(meters = 45) {
+//     alert("Galloping...");
+//     super.move(meters);
+//   }
+// }
+// class Donkey extends Animal {
+//     distance: number
+//   constructor(name: string, distance: number) {
+//     super(name);
+//     this.distance = distance;
+//   }
+//   move(meters = 53) {
+//     alert("Moving...");
+//     super.move(meters);
+//   }
+// }
+// class Cats extends Animal {
+//     constructor(name: string) {
+//         super(name);
+//     }
+//     move(meters = 1) {
+//         alert("Jumping...");
+//         super.move(meters);
+//     }
+// }
+// let a: Animal = new Snake("Python");
+// a.move(5);
+// console.log(a);
+// let a1: Animal = new Horse("Rocket");
+// console.log(a1);
+// let h: Horse = a1;
+// console.log(h);
+// let a2: Animal = new Donkey("Worder", 199);
+// console.log(a2);
+// let h3: Donkey = a2 as Donkey;
+// console.log(h3);
+// let d1: Horse = new Donkey("Worder", 299);
+// console.log("is Animal? "+ (d1 instanceof Animal)); // true
+// console.log("is Donkey? "+ (d1 instanceof Donkey)); // true
+// console.log("is Horse? "+ (d1 instanceof Horse));
+// step13b_abstract_classes
+// abstract class Base {
+//   abstract getName(): string;
+//   printName() {
+//     console.log("Hello, " + this.getName());
+//   }
+// }
+// class Derived extends Base {
+//   getName() {
+//     return "worlds";
+//   }
+// }
+// const d = new Derived();
+// console.log(d);
+// d.printName();
+// d.getName();
+// abstract class Base {
+//     foo(): number {
+//         return this.bar();
+//     }
+//     abstract bar() : number;
+// }
+// class E extends Base {
+//     bar() {
+//         return 4;
+//     }
+// }
+// step13c_constructor
+// Case 1:
+// If parent class provide constructor and child class does not
+// provide then child class will use parent's constrcutor
+// and child's object creation will required use of parent's
+//constructor parameters
+// class A {
+//     name: string;
+//     constructor(theName: string, age: number) {
+//         this.name = theName;
+//         console.log("A constructor")
+//     }
+// }
+// class B extends A {
+// }
+// let a: A = new A("A", 4);
+// let b: B = new B("C", 8);
+// let c: B = new B();  // This is not working as child class must use parents constructor
+// let d: B = new B("C"); //This is also not working
+// Case 2:
+// If parent class does not provide constructor and child class provide constrcutor then
+// child class must call super() within child's class constructor
+// class C {}
+// class D extends C {
+//   name: string;
+//   constructor(theName: string, age: number) {
+//     super();
+//     this.name = theName;
+//     console.log("D constructor");
+//   }
+// }
+// let aa: C = new C();
+// let bb: D = new D(); //ERROR
+// let cc: D = new D("C", 9);
+// Case 3:
+// If parent class and child class both provide constructor
+// then child class must call super with same parameters as
+// they are in parent's constructor call to super
+class E {
+    constructor(theName, age) {
+        this.name = theName;
+        console.log("E constructor");
+    }
+    displayName() {
+        console.log("Name = " + this.name);
+    }
+}
+class F extends E {
     constructor(theName) {
+        super(theName, 4);
         this.name = theName;
     }
-    move(meters = 45) {
-        console.log(this.name + " moved " + meters + "m.");
-    }
 }
-// const d = new Animal("Hammad");
-// d.move();
-// // console.log(d);
-class Snake extends Animal {
-    constructor(name) {
-        super(name);
-    }
-    move(meters = 5) {
-        console.log("Slithering...");
-        super.move(meters);
-    }
-    bite() {
-        console.log("bites");
-    }
-}
-// let s = new Snake("Anaconda");
-// console.log(s);
-// s.move();
-// s.bite();
-class Horse extends Animal {
-    constructor(name) {
-        super(name);
-    }
-    move(meters = 45) {
-        alert("Galloping...");
-        super.move(meters);
-    }
-}
-class Donkey extends Animal {
-    constructor(name, distance) {
-        super(name);
-        this.distance = distance;
-    }
-    move(meters = 53) {
-        alert("Moving...");
-        super.move(meters);
-    }
-}
-class Cats extends Animal {
-    constructor(name) {
-        super(name);
-    }
-    move(meters = 1) {
-        alert("Jumping...");
-        super.move(meters);
-    }
-}
-let a = new Snake("Python");
-a.move(5);
-console.log(a);
-let a1 = new Horse("Rocket");
-console.log(a1);
-let h = a1;
-console.log(h);
-let a2 = new Donkey("Worder", 199);
-console.log(a2);
-let h3 = a2;
-console.log(h3);
-let d1 = new Donkey("Worder", 299);
-console.log("is Animal? " + (d1 instanceof Animal)); // true
-console.log("is Donkey? " + (d1 instanceof Donkey)); // true
-console.log("is Horse? " + (d1 instanceof Horse));
+let e = new E("E", 1);
+let f = new F("F");
+f.displayName();
 export {};
