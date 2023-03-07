@@ -424,15 +424,17 @@
 //     this.name = name;
 //   }
 // }
-class Animal {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    eat(quantity) {
-        console.log(this.name + " is a Human and his aage is " + this.age);
-    }
-}
+// class Animal {
+//     name: string;
+//     age: number;
+//     constructor(name: string, age: number){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     eat(quantity: number){
+//         console.log(this.name + " is a Human and his aage is " + this.age)
+//     }
+// }
 // let d = {name: "Hello", age: 4};
 // // console.log(d)
 // let h: Human = {name: "Hello"};
@@ -440,11 +442,82 @@ class Animal {
 // let h1: Human = d;
 // let isHuman: boolean = h instanceof Human;
 // console.log(isHuman);
-let a1 = { name: "Cat", age: 3, eat: function () {
-        console.log("Eat in object literal");
-    } };
-a1.eat(3);
+// let a1: Animal = {name: "Cat", age: 3, eat: function() {
+//     console.log("Eat in object literal");
+// }};
+// a1.eat(3);
+// console.log(a1);
+// let isAnimal: boolean = a1 instanceof Animal;
+// console.log(isAnimal);
+// step13a_inheritance
+class Animal {
+    constructor(theName) {
+        this.name = theName;
+    }
+    move(meters = 45) {
+        console.log(this.name + " moved " + meters + "m.");
+    }
+}
+// const d = new Animal("Hammad");
+// d.move();
+// // console.log(d);
+class Snake extends Animal {
+    constructor(name) {
+        super(name);
+    }
+    move(meters = 5) {
+        console.log("Slithering...");
+        super.move(meters);
+    }
+    bite() {
+        console.log("bites");
+    }
+}
+// let s = new Snake("Anaconda");
+// console.log(s);
+// s.move();
+// s.bite();
+class Horse extends Animal {
+    constructor(name) {
+        super(name);
+    }
+    move(meters = 45) {
+        alert("Galloping...");
+        super.move(meters);
+    }
+}
+class Donkey extends Animal {
+    constructor(name, distance) {
+        super(name);
+        this.distance = distance;
+    }
+    move(meters = 53) {
+        alert("Moving...");
+        super.move(meters);
+    }
+}
+class Cats extends Animal {
+    constructor(name) {
+        super(name);
+    }
+    move(meters = 1) {
+        alert("Jumping...");
+        super.move(meters);
+    }
+}
+let a = new Snake("Python");
+a.move(5);
+console.log(a);
+let a1 = new Horse("Rocket");
 console.log(a1);
-let isAnimal = a1 instanceof Animal;
-console.log(isAnimal);
+let h = a1;
+console.log(h);
+let a2 = new Donkey("Worder", 199);
+console.log(a2);
+let h3 = a2;
+console.log(h3);
+let d1 = new Donkey("Worder", 299);
+console.log("is Animal? " + (d1 instanceof Animal)); // true
+console.log("is Donkey? " + (d1 instanceof Donkey)); // true
+console.log("is Horse? " + (d1 instanceof Horse));
 export {};

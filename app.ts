@@ -611,3 +611,95 @@ import chalk from "chalk";
 // console.log(a1);
 // let isAnimal: boolean = a1 instanceof Animal;
 // console.log(isAnimal);
+
+// step13a_inheritance
+
+class Animal {
+  name: string;
+  constructor(theName: string) {
+    this.name = theName;
+  }
+  move(meters: number = 45) {
+    console.log(this.name + " moved " + meters + "m.");
+  }
+}
+
+// const d = new Animal("Hammad");
+// d.move();
+// // console.log(d);
+
+class Snake extends Animal {
+  constructor(name: string) {
+    super(name);
+  }
+  move(meters = 5) {
+    console.log("Slithering...");
+    super.move(meters);
+  }
+  bite() {
+    console.log("bites");
+  }
+}
+
+// let s = new Snake("Anaconda");
+// console.log(s);
+// s.move();
+// s.bite();
+
+class Horse extends Animal {
+  constructor(name: string) {
+    super(name);
+  }
+  move(meters = 45) {
+    alert("Galloping...");
+    super.move(meters);
+  }
+}
+
+class Donkey extends Animal {
+    distance: number
+  constructor(name: string, distance: number) {
+    super(name);
+    this.distance = distance;
+  }
+  move(meters = 53) {
+    alert("Moving...");
+    super.move(meters);
+  }
+}
+
+
+class Cats extends Animal {
+    constructor(name: string) {
+        super(name);
+    }
+    move(meters = 1) {
+        alert("Jumping...");
+        super.move(meters);
+    }
+}
+
+let a: Animal = new Snake("Python");
+a.move(5);
+console.log(a);
+
+let a1: Animal = new Horse("Rocket");
+console.log(a1);
+
+let h: Horse = a1;
+console.log(h);
+
+let a2: Animal = new Donkey("Worder", 199);
+console.log(a2);
+
+let h3: Donkey = a2 as Donkey;
+console.log(h3);
+
+let d1: Horse = new Donkey("Worder", 299);
+
+
+console.log("is Animal? "+ (d1 instanceof Animal)); // true
+console.log("is Donkey? "+ (d1 instanceof Donkey)); // true
+console.log("is Horse? "+ (d1 instanceof Horse));
+
+
