@@ -883,6 +883,54 @@ import chalk from "chalk";
 // console.log(h);
 // let a = animal = employee;// Error
 
-
 // step16_classes_protected_modifier
 
+// class Greeter {
+//   public greet() {
+//     console.log("Hello, " + this.getName());
+//   }
+//   protected getName() {
+//     return "Hammad";
+//   }
+// }
+
+// class SpecialGreeter extends Greeter {
+//   public howdy() {
+//     console.log("Howdy, " + this.getName());
+//   }
+// }
+
+// const g = new SpecialGreeter();
+// g.greet();
+// // g.getName(); // Error
+
+
+// class ListString {
+//   private contents: string[];
+//   constructor() {
+//     this.contents = [];
+//   }
+//   protected setElement(index: number, item: string) {
+//     this.contents[index] = item;
+//   }
+// }
+
+// class StackString extends ListString {
+//   currentIndex: number;
+//   constructor() {
+//     super();
+//     this.currentIndex = 4;
+//   }
+//   public push(item: string) {
+//     this.setElement(this.currentIndex, item);
+//     this.currentIndex++;
+//   }
+// }
+
+// let stack = new StackString();
+// console.log(stack)
+
+// // stack.setElement(9, 1); // Error
+
+
+// step17_accessors

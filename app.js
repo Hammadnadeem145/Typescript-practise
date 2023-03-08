@@ -650,24 +650,64 @@
 // let r: Robot = new Robot("R2-D2");
 // let r0: Robot = new Animal("Parrots")// Error
 // console.log(r0);
-class BigAnimal {
-    constructor(theName) {
-        this.name = theName;
-    }
-}
-class Rhino extends BigAnimal {
+// class BigAnimal {
+//   private name: string;
+//   constructor(theName: string) {
+//     this.name = theName;
+//   }
+// }
+// class Rhino extends BigAnimal {
+//   constructor() {
+//     super("Rhino");
+//   }
+// }
+// class Employee {
+//   private name: string;
+//   constructor(theName: string) {
+//     this.name = theName;
+//   }
+// }
+// let animal = new BigAnimal("Elephant");
+// let rhino = new Rhino();
+// let employee = new Employee("Ali");
+// let h = animal = rhino;
+// console.log(h);
+// let a = animal = employee;// Error
+// step16_classes_protected_modifier
+// class Greeter {
+//   public greet() {
+//     console.log("Hello, " + this.getName());
+//   }
+//   protected getName() {
+//     return "Hammad";
+//   }
+// }
+// class SpecialGreeter extends Greeter {
+//   public howdy() {
+//     console.log("Howdy, " + this.getName());
+//   }
+// }
+// const g = new SpecialGreeter();
+// g.greet();
+// // g.getName(); // Error
+class ListString {
     constructor() {
-        super("Rhino");
+        this.contents = [];
+    }
+    setElement(index, item) {
+        this.contents[index] = item;
     }
 }
-class Employee {
-    constructor(theName) {
-        this.name = theName;
+class StackString extends ListString {
+    constructor() {
+        super();
+        this.currentIndex = 4;
+    }
+    push(item) {
+        this.setElement(this.currentIndex, item);
+        this.currentIndex++;
     }
 }
-let animal = new BigAnimal("Elephant");
-let rhino = new Rhino();
-let employee = new Employee("Ali");
-let h = animal = rhino;
-console.log(h);
+let stack = new StackString();
+console.log(stack);
 export {};
