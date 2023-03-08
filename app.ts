@@ -803,4 +803,54 @@ import chalk from "chalk";
 // let f: F = new F("F");
 // f.displayName();
 
+// step14_classes_private_modifier
 
+// class Animal {
+//   private name: string;
+//   constructor(theName: string) {
+//     this.name = theName;
+//   }
+//   move(meters: number) {
+//     console.log(this.name + " moved " + meters + "m.");
+//   }
+// }
+
+// let a = new Animal("Dog");
+// console.log(a);
+// a.move(32);
+
+// step15_nominal_types
+
+// class Human {
+//   private name: string;
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+//   eat() {
+//     console.log(this.name + " is a Human and is eating");
+//   }
+// }
+
+// class Animal {
+//   private name: string;
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+//   eat() {
+//     console.log(this.name + " is a Animal and is eating");
+//   }
+// }
+
+// class Robot {
+//   private name: string;
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+// }
+
+// let h: Human = new Human("Hammad");
+// let a: Animal = new Animal("Bird");
+// let r: Robot = new Robot("R2-D2");
+
+// let r0: Robot = new Animal("Parrots")// Error
+// console.log(r0);

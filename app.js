@@ -587,22 +587,36 @@
 // If parent class and child class both provide constructor
 // then child class must call super with same parameters as
 // they are in parent's constructor call to super
-class E {
-    constructor(theName, age) {
-        this.name = theName;
-        console.log("E constructor");
-    }
-    displayName() {
-        console.log("Name = " + this.name);
-    }
-}
-class F extends E {
+// class E {
+//   name: string;
+//   constructor(theName: string, age: number) {
+//     this.name = theName;
+//     console.log("E constructor");
+//   }
+//   displayName(): void {
+//     console.log("Name = " + this.name);
+//   }
+// }
+// class F extends E {
+//     name: string;
+//     constructor(theName: string) {
+//         super(theName, 4);
+//         this.name = theName;
+//     }
+// }
+// let e: E = new E("E", 1);
+// let f: F = new F("F");
+// f.displayName();
+// step14_classes_private_modifier
+class Animal {
     constructor(theName) {
-        super(theName, 4);
         this.name = theName;
     }
+    move(meters) {
+        console.log(this.name + " moved " + meters + "m.");
+    }
 }
-let e = new E("E", 1);
-let f = new F("F");
-f.displayName();
+let a = new Animal("Dog");
+console.log(a);
+a.move(32);
 export {};
