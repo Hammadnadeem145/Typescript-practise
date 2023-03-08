@@ -854,3 +854,35 @@ import chalk from "chalk";
 
 // let r0: Robot = new Animal("Parrots")// Error
 // console.log(r0);
+
+// class BigAnimal {
+//   private name: string;
+//   constructor(theName: string) {
+//     this.name = theName;
+//   }
+// }
+
+// class Rhino extends BigAnimal {
+//   constructor() {
+//     super("Rhino");
+//   }
+// }
+
+// class Employee {
+//   private name: string;
+//   constructor(theName: string) {
+//     this.name = theName;
+//   }
+// }
+
+// let animal = new BigAnimal("Elephant");
+// let rhino = new Rhino();
+// let employee = new Employee("Ali");
+
+// let h = animal = rhino;
+// console.log(h);
+// let a = animal = employee;// Error
+
+
+// step16_classes_protected_modifier
+
