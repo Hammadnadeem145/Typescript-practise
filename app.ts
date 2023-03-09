@@ -904,7 +904,6 @@ import chalk from "chalk";
 // g.greet();
 // // g.getName(); // Error
 
-
 // class ListString {
 //   private contents: string[];
 //   constructor() {
@@ -932,5 +931,93 @@ import chalk from "chalk";
 
 // // stack.setElement(9, 1); // Error
 
-
 // step17_accessors
+
+// var passcode = "Secret passcode";
+
+// class Employee {
+//   private _fullName: string | undefined;
+
+//   get fullName(): string | undefined {
+//     return this._fullName;
+//   }
+//   set fullName(newName: string | undefined) {
+//     this._fullName = newName;
+//   }
+// }
+
+// var employee = new Employee();
+// employee.fullName = "Hammad Nadeem";
+// if (employee.fullName) {
+//     console.log(employee.fullName);
+// }
+
+// class C {
+//   _length = 4;
+//   get length() {
+//     return this._length;
+//   }
+//   set length(value) {
+//     this._length = value;
+//   }
+// }
+
+// let A = new C();
+// console.log(A);
+
+
+// class Thing {
+//     _size = 23;
+//     get size(): number {
+//         return this._size;
+//     }
+//     set size(value: string | number | boolean) {
+//         let num = Number(value);
+//         if (!Number.isFinite(num)) {
+//             this._size = 0;
+//         }
+//         this._size = num;
+//     }
+// }
+
+
+// let A = new Thing();
+// console.log(A);
+
+
+// step18_static_properties
+
+// class MyClass {
+//     static x = 1;
+//     static printx() {
+//         console.log(MyClass.x);
+//     }
+// }
+
+// console.log(MyClass.x);
+// MyClass.printx();
+
+//Static members can also use the same public, protected, and private visibility modifiers:
+
+// class MyClass {
+//     private static x = 0;
+// }
+// console.log(MyClass.x);
+
+// Static members are also inherited:
+
+// class Base {
+//     static getGreeting() {
+//         return "Hello World";
+//     }
+// }
+
+// class Derived extends Base {
+//     myGreeting = Derived.getGreeting();
+// }
+
+// const A = new Derived();
+// console.log(A);
+
+
+//step19a_interfaces
