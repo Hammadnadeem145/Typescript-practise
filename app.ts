@@ -965,7 +965,6 @@ import chalk from "chalk";
 // let A = new C();
 // console.log(A);
 
-
 // class Thing {
 //     _size = 23;
 //     get size(): number {
@@ -980,10 +979,8 @@ import chalk from "chalk";
 //     }
 // }
 
-
 // let A = new Thing();
 // console.log(A);
-
 
 // step18_static_properties
 
@@ -1019,5 +1016,102 @@ import chalk from "chalk";
 // const A = new Derived();
 // console.log(A);
 
-
 //step19a_interfaces
+
+//without interfaces
+
+// function printLabel(labelledObj: {label: string}) {
+//     console.log(labelledObj.label);
+// }
+
+// const A = printLabel({label: "Size 10 Object"});
+// console.log(A);
+// printLabel({mylabel: "Size 10 Object"}); // Error
+
+// function printLabelX(labelledObj: {[x: string]: any}) {
+//     console.log(arguments[0]);
+// }
+// printLabelX({name: "Hammad"});
+
+// Same Example with a named interface
+// interface labelledValue {
+//     label: string;
+// }
+
+// interface labelledValue2 {
+//     [x: string]: any
+// }
+
+// function printLabelY(labelledObj: labelledValue) {
+//     console.log(labelledObj.label);
+// }
+
+// function printLabelY2(labelledObj: labelledValue2) {
+//     console.log(arguments[0]);
+// }
+
+// printLabelY({label: "Size 11 Object"});
+// printLabelY2({name: "Hammad"});
+
+// // Stable Objects
+
+// let myObjY1 = {label: "Size 20 Object"};
+// printLabelY(myObjY1);
+
+// let myObjY2 = {name: "Nadeem"};
+// printLabelY2(myObjY2);
+
+
+
+
+// interface User {
+//     name: string;
+//     id: number;
+// }
+
+// class UserAccount {
+//     name: string;
+//     id: number;
+
+//     constructor(name: string, id: number) {
+//         this.name = name;
+//         this.id = id;
+//     }
+// }
+
+// const user: User = new UserAccount("Hammad", 21);
+// console.log(user);
+
+// interface User {
+//   gmail: string;
+//   password: string;
+//   dob: number;
+// }
+
+// class UserAccount {
+//   gmail: string;
+//   password: string;
+//   dob: number;
+//   constructor(gmail: string, password: string, dob: number) {
+//     this.gmail = gmail;
+//     this.password = password;
+//     this.dob = dob;
+//   }
+// }
+
+// const user: User = new UserAccount(
+//   "hammadnadeem145@gmil.com",
+//   "Hammad12345",
+//   13032001
+// );
+
+// console.log(user);
+
+
+// step19b_interfaces_optional_properties
+
+interface SquareConfig {
+    color?: string;
+    width?: number;
+}
+
