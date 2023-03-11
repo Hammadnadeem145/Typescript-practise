@@ -1,10 +1,12 @@
-class UserAccount {
-    constructor(gmail, password, dob) {
-        this.gmail = gmail;
-        this.password = password;
-        this.dob = dob;
+let mySearch = function (src, sub) {
+    var result = src.search(sub);
+    if (result == -1) {
+        return false;
     }
-}
-const user = new UserAccount("hammadnadeem145@gmil.com", "Hammad12345", 13032001);
-console.log(user);
+    else {
+        return true;
+    }
+};
+const search = mySearch("-1", "-4");
+console.log(search);
 export {};

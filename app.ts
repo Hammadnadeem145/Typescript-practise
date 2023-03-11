@@ -1061,9 +1061,6 @@ import chalk from "chalk";
 // let myObjY2 = {name: "Nadeem"};
 // printLabelY2(myObjY2);
 
-
-
-
 // interface User {
 //     name: string;
 //     id: number;
@@ -1107,11 +1104,45 @@ import chalk from "chalk";
 
 // console.log(user);
 
-
 // step19b_interfaces_optional_properties
 
-interface SquareConfig {
-    color?: string;
-    width?: number;
-}
+// interface SquareConfig {
+//   color?: string;
+//   width?: number;
+// }
 
+// function createSquare(config: SquareConfig): { color: string; area: number } {
+//   var newSquare = { color: "White", area: 100 };
+//   if (config.color) {
+//     newSquare.color = config.color;
+//   }
+//   if (config.width) {
+//     newSquare.area = config.width * config.width;
+//   }
+//   return newSquare;
+// }
+
+
+// var mySquare = createSquare({color: "Black"});
+// console.log(mySquare.area);
+// console.log(mySquare.color);
+
+
+// step19c_interfaces_functional_types
+
+// interface SearchFunc {
+//     (source: string, subString: string): Boolean 
+// }
+
+// let mySearch: SearchFunc = function(src: string, sub: string) {
+//     var result = src.search(sub);
+//     if(result == -1) {
+//         return false;
+//     }
+//     else {
+//         return true;
+//     }
+// }
+
+// const search = mySearch("-1", "-4");
+// console.log(search);
